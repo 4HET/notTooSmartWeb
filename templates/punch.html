@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--适配安卓-->
+    <meta charset="utf-8" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+          name="viewport"/>
+    <script>
+        //接收android传递的数据，并显示在html上
+        function AndroidToWeb(str) {
+            document.getElementById("submit").innerHTML = str;
+        }
+    </script>
+
+</head>
+<body>
+<form action="/punch/" method="post">
+    {% csrf_token %}
+    <input type="text" name="email">
+    <input type="submit" value="提交" onclick="AndroidToWeb()">
+    <label id = "label" id="submit"/>
+</form>
+
+<div id="div" onclick="getAndroidValue()"style="width:100px; height:100px; background-color:#099;"></div>
+<script type="text/javascript">
+function getAndroidValue(){
+ document.getElementById("div").innerHTML=window.getPassword.getPassword();
+}
+</script>
+
+<p>{{ rlt }}</p>
+</body>
+</html>

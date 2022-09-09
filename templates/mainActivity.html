@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!--适配安卓-->
+    <meta charset="utf-8" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+    <!--badjs兼容处理-->
+<!--    <script>var __empty = function __empty() {};window.JDPerformance = { sendResource: __empty };window.MPing = function () {this.send = __empty;this.EventSeries = { androidSeries: __empty };};window.getAndroidUnionSeries = __empty;window.webviewVisible = __empty;window.musicStop = __empty;window.getUnionSeries = __empty;window.pingouWebviewNotification = window.pingouWebviewNotification || __empty;window.getNetWorkCallback = window.getNetWorkCallback || __empty;</script>-->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../static/js/axios-0.18.0.js"></script>
+    <script src="../static/js/vue.js"></script>
+    <script src="../static/element-ui/lib/index.js"></script>
+    <link rel="stylesheet" href="../static/element-ui/lib/theme-chalk/index.css">
+
+
+        <script>
+            function to_course() {
+                document.getElementById("ifr").setAttribute("src", "../course")
+                // window.location.href = "../course"
+            }
+
+            function to_punch() {
+                document.getElementById("ifr").setAttribute("src", "../punch")
+                // window.location.href = "../punch"
+            }
+
+            function to_score() {
+                document.getElementById("ifr").setAttribute("src", "../score")
+                // window.location.href = "../score"
+            }
+    </script>
+</head>
+
+<body>
+
+<div id="app">
+    <el-container style="height: 100%; border: 0px solid #eee;">
+        <el-header style="height: 100%;" align="center">
+            <el-menu class="el-menu-demo" mode="horizontal" default-active="1">
+
+                <el-menu-item index="1" style="width: 33%;" onclick="to_course()">
+                    <template>课表</template>
+                </el-menu-item>
+                <el-menu-item index="2" style="width: 33%;" onclick="to_punch()">
+                    <template>打卡</template>
+                </el-menu-item>
+                <el-menu-item index="3" style="width: 33%;" onclick="to_score()">
+                    <template>成绩</template>
+                </el-menu-item>
+            </el-menu>
+        </el-header>
+    </el-container>
+
+
+</div>
+<div style="position: fixed; height: 100%;width: 100%">
+    <iframe id="ifr" src="../punch" height="100%" width="99%" style="border: 0"></iframe>
+</div>
+
+
+
+<script>
+    new Vue({
+        el: "#app",
+
+        mounted() {
+            this.selectAll();
+        },
+        methods: {
+            // selectAll() {
+            //     var _this = this;
+            //
+            //     axios({
+            //         method: "post",
+            //         url: "http://localhost:8080/manager/user/selectByPage?currentPage=" + this.currentPage + "&pageSize=" + this.pageSize,
+            //         data: this.user
+            //     }).then(resp => {
+            //         //设置表格数据
+            //         this.tableData = resp.data.rows; // {rows:[],totalCount:100}
+            //         //设置总记录数
+            //         this.totalCount = resp.data.totalCount;
+            //     })
+            // },
+            //分页
+            // handleSizeChange(val) {
+            //     //console.log(`每页 ${val} 条`);
+            //     // 重新设置每页显示的条数
+            //     this.pageSize = val;
+            //     this.selectAll();
+            // },
+            // handleCurrentChange(val) {
+            //     //console.log(`当前页: ${val}`);
+            //     // 重新设置当前页码
+            //     this.currentPage = val;
+            //     this.selectAll();
+            // },
+            // onselect() {
+            //     this.selectAll();
+            // }
+        },
+        data() {
+            const item = {
+                name: '王小虎',
+                password: '123456',
+                permission: '学生'
+            };
+            return {
+                // 每页显示的条数
+                pageSize: 10,
+                // 总记录数
+                totalCount: 100,
+                // 当前页码
+                currentPage: 1,
+                tableData: Array(20).fill(item)
+            }
+        }
+    })
+
+</script>
+</body>
+</html>
