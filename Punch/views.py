@@ -16,11 +16,11 @@ def postRequest(request):
     ctx = {}
     if request.POST:
         ctx['rlt'] = request.POST['email']
-        # ctx['username'] = request.POST['getUsername']
-        # ctx['password'] = request.POST['getPassword']
+        ctx['username'] = request.POST['username']
+        ctx['password'] = request.POST['password']
         # print(ctx['rlt'])
     return render(request, "punch.html", ctx)
 
 if __name__ == '__main__':
     sql = 'show tables;'
-    print(mysql(sql, 1))
+    # print(mysql(sql, 1))

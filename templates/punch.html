@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -11,24 +11,48 @@
         function AndroidToWeb(str) {
             document.getElementById("submit").innerHTML = str;
         }
+
+        function setData() {
+            document.getElementById("username").value = window.getUsername.getUsername();
+            document.getElementById("password").value = window.getPassword.getPassword();
+
+            // document.getElementById("myForm").submit();
+        }
     </script>
 
 </head>
 <body>
-<form action="/punch/" method="post">
+<form action="/punch/" method="post" id="myForm">
     {% csrf_token %}
     <input type="text" name="email">
+    </br>
+    <input id="username" type="text" name="username">
+    </br>
+    <input id="password" type="text" name="password">
+    <button onclick="setData()">getDataFromAndroid</button>
     <input type="submit" value="提交" onclick="AndroidToWeb()">
-    <label id = "label" id="submit"/>
+    <label id="label" id="submit"/>
 </form>
 
-<div id="div" onclick="getAndroidValue()"style="width:100px; height:100px; background-color:#099;"></div>
+<div id="usrname" onclick="getAndroidValueUsername()"
+     style="width:100px; height:100px; background-color:#009903;"></div>
+
+<div id="pwd" onclick="getAndroidValuePassword()" style="width:100px; height:100px; background-color:#099;"></div>
+
 <script type="text/javascript">
-function getAndroidValue(){
- document.getElementById("div").innerHTML=window.getPassword.getPassword();
-}
+    function getAndroidValueUsername() {
+        document.getElementById("usrname").innerHTML = window.getUsername.getUsername();
+    }
+
+    function getAndroidValuePassword() {
+        document.getElementById("pwd").innerHTML = window.getPassword.getPassword();
+    }
 </script>
 
 <p>{{ rlt }}</p>
+</br>
+<p>{{username }}</p>
+</br>
+<p>{{ password }}</p>
 </body>
 </html>
