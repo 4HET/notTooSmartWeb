@@ -20,4 +20,5 @@ from . import views
 
 urlpatterns = [
     path('mainActivity/', views.mainActivity),
+    path('userinfo/', views.usrInfo)
 ]

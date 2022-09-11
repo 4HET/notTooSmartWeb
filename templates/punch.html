@@ -12,32 +12,38 @@
             document.getElementById("submit").innerHTML = str;
         }
 
-        function setData() {
-            document.getElementById("username").value = window.getUsername.getUsername();
-            document.getElementById("password").value = window.getPassword.getPassword();
-
-            // document.getElementById("myForm").submit();
-        }
+        // function setData() {
+        //     try {
+        //         document.getElementById("username").value = window.getUsername.getUsername();
+        //         document.getElementById("password").value = window.getPassword.getPassword();
+        //     } catch (err) {
+        //         document.getElementById("username").value = "username";
+        //         document.getElementById("password").value = "password";
+        //     }
+        //
+        //
+        //     // document.getElementById("myForm").submit();
+        // }
     </script>
 
 </head>
 <body>
 <form action="/punch/" method="post" id="myForm">
     {% csrf_token %}
-    <input type="text" name="email">
+    邮箱:<input type="text" name="email">
     </br>
-    <input id="username" type="text" name="username">
+<!--    <input id="username" type="text" name="username">-->
     </br>
-    <input id="password" type="text" name="password">
-    <button onclick="setData()">getDataFromAndroid</button>
+<!--    <input id="password" type="text" name="password">-->
+<!--    <button onclick="setData()">getDataFromAndroid</button>-->
     <input type="submit" value="提交" onclick="AndroidToWeb()">
     <label id="label" id="submit"/>
 </form>
 
-<div id="usrname" onclick="getAndroidValueUsername()"
-     style="width:100px; height:100px; background-color:#009903;"></div>
+<!--<div id="usrname" onclick="getAndroidValueUsername()"-->
+<!--     style="width:100px; height:100px; background-color:#009903;"></div>-->
 
-<div id="pwd" onclick="getAndroidValuePassword()" style="width:100px; height:100px; background-color:#099;"></div>
+<!--<div id="pwd" onclick="getAndroidValuePassword()" style="width:100px; height:100px; background-color:#099;"></div>-->
 
 <script type="text/javascript">
     function getAndroidValueUsername() {
@@ -50,9 +56,9 @@
 </script>
 
 <p>{{ rlt }}</p>
-</br>
-<p>{{username }}</p>
-</br>
-<p>{{ password }}</p>
+<!--</br>-->
+<!--<p>{{username }}</p>-->
+<!--</br>-->
+<!--<p>{{ password }}</p>-->
 </body>
 </html>

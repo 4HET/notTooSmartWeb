@@ -17,60 +17,35 @@
 
 
     <script>
-        function to_course() {
-            document.getElementById("ifr").setAttribute("src", "../course")
-            // window.location.href = "../course"
-        }
 
         function to_punch() {
-            document.getElementById("ifr").setAttribute("src", "../punch")
-            // try {
-            //     document.getElementById("username").value = window.getUsername.getUsername();
-            //     document.getElementById("password").value = window.getPassword.getPassword();
-            //     document.getElementById("myForm").submit();
-            // } catch (err) {
-            //     document.getElementById("username").value = "username";
-            //     document.getElementById("password").value = "password";
-            //     document.getElementById("myForm").submit();
-            // }
+            // document.getElementById("ifr").setAttribute("src", "../punch")
+            try {
+                document.getElementById("username").value = window.getUsername.getUsername();
+                document.getElementById("password").value = window.getPassword.getPassword();
+                document.getElementById("myForm").submit();
+            } catch (err) {
+                document.getElementById("username").value = "username";
+                document.getElementById("password").value = "password";
+                document.getElementById("myForm").submit();
+            }
         }
 
-        function to_score() {
-            document.getElementById("ifr").setAttribute("src", "../score")
-            // window.location.href = "../score"
-        }
     </script>
 </head>
 
-<body>
+<body onload="to_punch()">
 
-<div id="app">
-    <el-container style="height: 100%; border: 0px solid #eee;">
-        <el-header style="height: 100%;" align="center">
-            <el-menu class="el-menu-demo" mode="horizontal" default-active="1">
-
-                <el-menu-item index="1" style="width: 33%;" onclick="to_course()">
-                    <template>课表</template>
-                </el-menu-item>
-                <el-menu-item index="2" style="width: 33%;" onclick="to_punch()">
-                    <template>打卡</template>
-                </el-menu-item>
-                <el-menu-item index="3" style="width: 33%;" onclick="to_score()">
-                    <template>成绩</template>
-                </el-menu-item>
-            </el-menu>
-        </el-header>
-    </el-container>
-</div>
-<form id="myForm" action="/userinfo/" method="post" style="display:none">
+<form id="myForm" action="/postForm/" method="post" disabled="none">
     {% csrf_token %}
     <input id="username" type="text" name="username">
     </br>
     <input id="password" type="text" name="password">
+<!--    <button onclick="to_punch()">hhh</button>-->
 </form>
 
 <div style="position: fixed; height: 100%;width: 100%">
-    <iframe id="ifr" src="../course" height="100%" width="99%" style="border: 0"></iframe>
+    <iframe id="ifr" src="../mainActivity" height="100%" width="99%" style="border: 0"></iframe>
 </div>
 
 

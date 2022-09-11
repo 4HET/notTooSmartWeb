@@ -16,8 +16,9 @@ def postRequest(request):
     ctx = {}
     if request.POST:
         ctx['rlt'] = request.POST['email']
-        ctx['username'] = request.POST['username']
-        ctx['password'] = request.POST['password']
+        # ctx['username'] = request.POST['username']
+        # ctx['password'] = request.POST['password']
+        print(request.POST['email'])
         # print(ctx['rlt'])
     return render(request, "punch.html", ctx)
 
