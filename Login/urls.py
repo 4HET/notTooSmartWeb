@@ -7,9 +7,9 @@ from . import views
 # from django.conf.urls import url
 
 urlpatterns = [
-    path('form/', views.form),
-    path('login/', views.login),
-    path('postForm/', views.postForm)
+    # path('form/', views.form),
+    # path('login/', views.login),
+    # path('postForm/', views.postForm)
     # path('username/', views.username),
     # path('password/', views.password),
 ]
