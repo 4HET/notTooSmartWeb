@@ -4,10 +4,23 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <!--适配安卓-->
-    <meta charset="utf-8" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+    <meta charset="utf-8" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+          name="viewport"/>
 
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../static/js/axios-0.18.0.js"></script>
+    <script src="../static/js/vue.js"></script>
+    <script src="../static/element-ui/lib/index.js"></script>
+    <link rel="stylesheet" href="../static/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
 </head>
 <body>
-<div>This is score</div>
+{% for item in data %}
+<p>{{ item.semesterOfYear }}</p>
+{% for d in item.scoreList %}
+    <p>{{ d.name }} {{ d.nature }} {{ d.credit }} {{ d.score }} {{ d.gpa }}</p>
+{% endfor %}
+<br/>
+{% endfor %}
 </body>
 </html>

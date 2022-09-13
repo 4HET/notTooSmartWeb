@@ -1,13 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8"/>
+    <title>我的课表</title>
     <!--适配安卓-->
-    <meta charset="utf-8" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
-
+    <meta charset="utf-8" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+          name="viewport"/>
 </head>
 <body>
-<div>yeah!this is course!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</div>
+
+{% for item in data %}
+<p>{{ item.semesterOfYear }}</p>
+<p>{{ item.classPlace }}</p>
+<p>{{ item.teacherName|truncatechars:4 }}</p>
+<p>{{ item.classWeek }}</p>
+<p>{{ item.classSections }}</p>
+<br/>
+{% endfor %}
+<!--{{ courseName }}-->
+<!--{{ classPlace }}-->
+<!--{{ teacherName }}-->
 </body>
 </html>

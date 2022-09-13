@@ -1,0 +1,139 @@
+{
+  "timestamp": 1663060970.877638000,
+  "data": [
+    {
+      "courseName": "大数据可视化分析",
+      "startEndWeek": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17",
+      "classPlace": "JS317",
+      "teacherName": "陈矗",
+      "classWeek": "2",
+      "classSections": "0102"
+    },
+    {
+      "courseName": "机器学习",
+      "startEndWeek": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17",
+      "classPlace": "JS317",
+      "teacherName": "马飞",
+      "classWeek": "4",
+      "classSections": "0304"
+    },
+    {
+      "courseName": "大数据可视化分析",
+      "startEndWeek": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
+      "classPlace": "JE201",
+      "teacherName": "陈矗",
+      "classWeek": "1",
+      "classSections": "0304"
+    },
+    {
+      "courseName": "机器学习",
+      "startEndWeek": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
+      "classPlace": "JS104",
+      "teacherName": "马飞",
+      "classWeek": "3",
+      "classSections": "0304"
+    },
+    {
+      "courseName": "数据结构",
+      "startEndWeek": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17",
+      "classPlace": "JS317",
+      "teacherName": "董兆安",
+      "classWeek": "2",
+      "classSections": "0304"
+    },
+    {
+      "courseName": "大学生创新创业指导",
+      "startEndWeek": "8",
+      "classPlace": "JE305",
+      "teacherName": "毕文波,董晓宇,耿晓敏,胡康兴,纪玉超,焦孟娟,刘明,孙威龙",
+      "classWeek": "2",
+      "classSections": "0506"
+    },
+    {
+      "courseName": "大学生创新创业指导",
+      "startEndWeek": "1",
+      "classPlace": "JE305",
+      "teacherName": "毕文波,董晓宇,耿晓敏,胡康兴,纪玉超,焦孟娟,刘明,孙威龙",
+      "classWeek": "2",
+      "classSections": "0506"
+    },
+    {
+      "courseName": "大学生创新创业指导",
+      "startEndWeek": "2",
+      "classPlace": "JE305",
+      "teacherName": "毕文波,董晓宇,耿晓敏,胡康兴,纪玉超,焦孟娟,刘明,孙威龙",
+      "classWeek": "2",
+      "classSections": "0506"
+    },
+    {
+      "courseName": "大学生创新创业指导",
+      "startEndWeek": "7",
+      "classPlace": "JE305",
+      "teacherName": "毕文波,董晓宇,耿晓敏,胡康兴,纪玉超,焦孟娟,刘明,孙威龙",
+      "classWeek": "2",
+      "classSections": "0506"
+    },
+    {
+      "courseName": "大学生创新创业指导",
+      "startEndWeek": "6",
+      "classPlace": "JE305",
+      "teacherName": "毕文波,董晓宇,耿晓敏,胡康兴,纪玉超,焦孟娟,刘明,孙威龙",
+      "classWeek": "2",
+      "classSections": "0506"
+    },
+    {
+      "courseName": "大学生创新创业指导",
+      "startEndWeek": "5",
+      "classPlace": "JE305",
+      "teacherName": "毕文波,董晓宇,耿晓敏,胡康兴,纪玉超,焦孟娟,刘明,孙威龙",
+      "classWeek": "2",
+      "classSections": "0506"
+    },
+    {
+      "courseName": "大学生创新创业指导",
+      "startEndWeek": "4",
+      "classPlace": "JE305",
+      "teacherName": "毕文波,董晓宇,耿晓敏,胡康兴,纪玉超,焦孟娟,刘明,孙威龙",
+      "classWeek": "2",
+      "classSections": "0506"
+    },
+    {
+      "courseName": "大学生创新创业指导",
+      "startEndWeek": "3",
+      "classPlace": "JE305",
+      "teacherName": "毕文波,董晓宇,耿晓敏,胡康兴,纪玉超,焦孟娟,刘明,孙威龙",
+      "classWeek": "2",
+      "classSections": "0506"
+    },
+    {
+      "courseName": "Spark大数据快速运算技术",
+      "startEndWeek": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
+      "classPlace": "JS324",
+      "teacherName": "闫超",
+      "classWeek": "5",
+      "classSections": "0506"
+    },
+    {
+      "courseName": "数据结构",
+      "startEndWeek": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
+      "classPlace": "JC401",
+      "teacherName": "董兆安",
+      "classWeek": "1",
+      "classSections": "050607"
+    },
+    {
+      "courseName": "Spark大数据快速运算技术",
+      "startEndWeek": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17",
+      "classPlace": "JS324",
+      "teacherName": "闫超",
+      "classWeek": "5",
+      "classSections": "0708"
+    }
+  ],
+  "code": 0,
+  "status": 200,
+  "message": "成功",
+  "success": true,
+  "notOk": false,
+  "ok": true
+}

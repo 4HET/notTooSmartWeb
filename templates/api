@@ -1,0 +1,32 @@
+{
+    "msg": "查询成功",
+    "status": 1,
+    "info": [
+        [
+            {
+                "id": 1,
+                "classId": 2,
+                "lessonsTime": "8:00-9:40",
+                "lessonsName": "计算机导论",
+                "lessonsAddress": "二教302",
+                "lessonsTeacher": "吴老师",
+                "lessonsRemark": "1-17周",
+                "lessonsNumber": "一",
+                "weekday": "星期一"
+            },
+            {
+                "id": 19,
+                "classId": 2,
+                "lessonsTime": "8:00-9:40",
+                "lessonsName": "编译原理",
+                "lessonsAddress": "二教302",
+                "lessonsTeacher": "吴老师",
+                "lessonsRemark": "1-5,8-12周",
+                "lessonsNumber": "一",
+                "weekday": "星期四"
+            },
+        ],
+        [{},{},{}],
+        [{},{},{}]
+    ]
+}
