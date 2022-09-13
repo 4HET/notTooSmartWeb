@@ -34,13 +34,11 @@
     </script>
 </head>
 
-<body onload="to_punch()">
-
 <form id="myForm" action="" method="post" disabled="none">
     {% csrf_token %}
     <input id="username" type="text" name="username">
     </br>
-    <input id="password" type="text" name="password">
+    <input id="password" type="password" name="password">
     <button TYPE="submit">hhh</button>
 </form>
 
@@ -57,36 +55,7 @@
             this.selectAll();
         },
         methods: {
-            // selectAll() {
-            //     var _this = this;
-            //
-            //     axios({
-            //         method: "post",
-            //         url: "http://localhost:8080/manager/user/selectByPage?currentPage=" + this.currentPage + "&pageSize=" + this.pageSize,
-            //         data: this.user
-            //     }).then(resp => {
-            //         //设置表格数据
-            //         this.tableData = resp.data.rows; // {rows:[],totalCount:100}
-            //         //设置总记录数
-            //         this.totalCount = resp.data.totalCount;
-            //     })
-            // },
-            //分页
-            // handleSizeChange(val) {
-            //     //console.log(`每页 ${val} 条`);
-            //     // 重新设置每页显示的条数
-            //     this.pageSize = val;
-            //     this.selectAll();
-            // },
-            // handleCurrentChange(val) {
-            //     //console.log(`当前页: ${val}`);
-            //     // 重新设置当前页码
-            //     this.currentPage = val;
-            //     this.selectAll();
-            // },
-            // onselect() {
-            //     this.selectAll();
-            // }
+
         },
         data() {
             const item = {

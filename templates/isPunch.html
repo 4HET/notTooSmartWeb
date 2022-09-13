@@ -3,8 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <!--适配安卓-->
+    <meta charset="utf-8" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+          name="viewport"/>
+    <!--badjs兼容处理-->
+    <!--    <script>var __empty = function __empty() {};window.JDPerformance = { sendResource: __empty };window.MPing = function () {this.send = __empty;this.EventSeries = { androidSeries: __empty };};window.getAndroidUnionSeries = __empty;window.webviewVisible = __empty;window.musicStop = __empty;window.getUnionSeries = __empty;window.pingouWebviewNotification = window.pingouWebviewNotification || __empty;window.getNetWorkCallback = window.getNetWorkCallback || __empty;</script>-->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../static/js/axios-0.18.0.js"></script>
+    <script src="../static/js/vue.js"></script>
+    <script src="../static/element-ui/lib/index.js"></script>
+    <link rel="stylesheet" href="../static/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+
+    <style>
+        a {
+            text-decoration: none;
+            color: #2b323d;
+        }
+    </style>
 </head>
 <body>
 hhh,你已经设置了自动打卡
+<!--<button></button>-->
+<br/>
+<div id="elButton">
+    <el-row>
+        <el-button><a href="/deletePunch/">注销</a></el-button>
+    </el-row>
+</div>
+<script>
+    new Vue({
+        el: "#elButton",
+
+        mounted() {
+            this.selectAll();
+        },
+        methods: {},
+        data() {
+            const item = {
+                name: '王小虎',
+                password: '123456',
+                permission: '学生'
+            };
+            return {
+                // 每页显示的条数
+                pageSize: 10,
+                // 总记录数
+                totalCount: 100,
+                // 当前页码
+                currentPage: 1,
+                tableData: Array(20).fill(item)
+            }
+        }
+    })
+
+</script>
 </body>
 </html>

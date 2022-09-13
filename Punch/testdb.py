@@ -52,3 +52,4 @@ def select(request):
         response1 += var.username + " " + var.password
     response = response1
     return HttpResponse("<p>" + response + "</p>")
+

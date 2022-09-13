@@ -7,12 +7,34 @@ from django.shortcuts import render, redirect
 
 from Punch import models
 
+from Punch.models import User
+
 
 # Create your views here.
 def punch(request):
-    context = {}
-    context['hello'] = 'Hello World!'
-    return render(request, 'punch.html', context)
+    username = request.COOKIES.get('username')
+    password = request.COOKIES.get('password')
+    print(request.COOKIES.get('is_login'))
+    status = request.COOKIES.get('is_login')  # 收到浏览器的再次请求,判断浏览器携带的cookie是不是登录成功的时候响应的 cookie
+    if not status:
+        return redirect('/login/')
+
+    user_obj = models.User.objects.filter(username=username, password=password).first().isPunch
+    if user_obj:
+        return redirect('/isPunch/')
+    ctx = {}
+    if request.POST:
+        ctx['rlt'] = request.POST['email']
+        # ctx['username'] = request.POST['username']
+        # ctx['password'] = request.POST['password']
+        print(request.POST['email'])
+        user1 = User.objects.get(username=username)
+        user1.isPunch = True
+        user1.email = request.POST['email']
+        user1.save()
+        return redirect('/isPunch/')
+        # print(ctx['rlt'])
+    return render(request, "punch.html", ctx)
 
 def isPunch(request):
     context = {}
@@ -36,6 +58,11 @@ def postRequest(request):
         # ctx['username'] = request.POST['username']
         # ctx['password'] = request.POST['password']
         print(request.POST['email'])
+        user1 = User.objects.get(username=username)
+        user1.isPunch = True
+        user1.email = request.POST['email']
+        user1.save()
+        return redirect('/isPunch/')
         # print(ctx['rlt'])
     return render(request, "punch.html", ctx)
 
@@ -83,6 +110,17 @@ def order(request):
         return redirect('/login/')
     return render(request, "order.html")
 
+def deletePunch(request):
+    username = request.COOKIES.get('username')
+    password = request.COOKIES.get('password')
+    # print(username)
+    # user_obj = models.User.objects.filter(username=username, password=password).first()
+    user1 = User.objects.get(username=username)
+    user1.isPunch = False
+    user1.email = ""
+
+    user1.save()
+    return redirect('/punch/')
 
 if __name__ == '__main__':
     sql = 'show tables;'

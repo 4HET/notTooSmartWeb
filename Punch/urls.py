@@ -8,7 +8,7 @@ from . import views, testdb
 # from django.conf.urls import url
 
 urlpatterns = [
-    path('punch/', views.postRequest),
+    path('punch/', views.punch),
     path('select/', testdb.select),
     path('login/', views.login),
     path('insert/', testdb.insert),
@@ -17,6 +17,7 @@ urlpatterns = [
     path('logout/', views.logout),
     path('order/', views.order),
     path('isPunch/', views.isPunch),
+    path('deletePunch/', views.deletePunch),
 
     # path('username/', views.username),
     # path('password/', views.password),

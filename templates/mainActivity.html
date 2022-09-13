@@ -16,12 +16,12 @@
     <link rel="stylesheet" href="../static/element-ui/lib/theme-chalk/index.css">
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
 
-    	<style>
-		a{
-			text-decoration: none;
+    <style>
+        a {
+            text-decoration: none;
             color: #2b323d;
-		}
-	</style>
+        }
+    </style>
 
 
     <script>
@@ -32,15 +32,6 @@
 
         function to_punch() {
             document.getElementById("ifr").setAttribute("src", "../punch")
-            // try {
-            //     document.getElementById("username").value = window.getUsername.getUsername();
-            //     document.getElementById("password").value = window.getPassword.getPassword();
-            //     document.getElementById("myForm").submit();
-            // } catch (err) {
-            //     document.getElementById("username").value = "username";
-            //     document.getElementById("password").value = "password";
-            //     document.getElementById("myForm").submit();
-            // }
         }
 
         function to_score() {
@@ -81,11 +72,10 @@
     <iframe id="ifr" src="../course" height="100%" width="99%" style="border: 0"></iframe>
 </div>
 
-<div id="elButton" style="position:absolute;right:0px;bottom:0px;width:60px;">
+<div id="elButton" style="position:absolute;right:0px;bottom:0px;">
     <el-row>
         <el-button><a href="/logout/" >注销</a></el-button>
     </el-row>
-
 </div>
 
 <script>
@@ -96,36 +86,7 @@
             this.selectAll();
         },
         methods: {
-            // selectAll() {
-            //     var _this = this;
-            //
-            //     axios({
-            //         method: "post",
-            //         url: "http://localhost:8080/manager/user/selectByPage?currentPage=" + this.currentPage + "&pageSize=" + this.pageSize,
-            //         data: this.user
-            //     }).then(resp => {
-            //         //设置表格数据
-            //         this.tableData = resp.data.rows; // {rows:[],totalCount:100}
-            //         //设置总记录数
-            //         this.totalCount = resp.data.totalCount;
-            //     })
-            // },
-            //分页
-            // handleSizeChange(val) {
-            //     //console.log(`每页 ${val} 条`);
-            //     // 重新设置每页显示的条数
-            //     this.pageSize = val;
-            //     this.selectAll();
-            // },
-            // handleCurrentChange(val) {
-            //     //console.log(`当前页: ${val}`);
-            //     // 重新设置当前页码
-            //     this.currentPage = val;
-            //     this.selectAll();
-            // },
-            // onselect() {
-            //     this.selectAll();
-            // }
+
         },
         data() {
             const item = {
