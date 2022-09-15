@@ -13,14 +13,96 @@
     <script src="../static/element-ui/lib/index.js"></script>
     <link rel="stylesheet" href="../static/element-ui/lib/theme-chalk/index.css">
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+
+    <style>
+        .demo-table-expand {
+            font-size: 0;
+        }
+
+        .demo-table-expand label {
+            width: 90px;
+            color: #99a9bf;
+        }
+
+        .demo-table-expand .el-form-item {
+            margin-right: 0;
+            margin-bottom: 0;
+            width: 50%;
+        }
+    </style>
 </head>
 <body>
-{% for item in data %}
-<p>{{ item.semesterOfYear }}</p>
-{% for d in item.scoreList %}
-    <p>{{ d.name }} {{ d.nature }} {{ d.credit }} {{ d.score }} {{ d.gpa }}</p>
-{% endfor %}
-<br/>
-{% endfor %}
+<template id="form">
+    <el-table
+            :data="{{ data }}"
+            style="width: 100%">
+        <el-table-column type="expand">
+            <template>
+                <el-table
+                        :data="{{ data.0.scoreList }}"
+                        stripe
+                        style="width: 100%">
+                    <el-table-column
+                            prop="name"
+                            label="学科"
+                            style="width: 33%">
+                    </el-table-column>
+                    <el-table-column
+                            prop="score"
+                            label="分数"
+                            style="width: 33%">
+                    </el-table-column>
+                    <el-table-column
+                            prop="gpa"
+                            label="gpa"
+                        style="width: 33%">
+                    </el-table-column>
+                </el-table>
+            </template>
+        </el-table-column>
+        <br/>
+
+        <el-table-column
+                label="学期"
+                prop="semesterOfYear">
+        </el-table-column>
+
+
+        </el-table-column>
+    </el-table>
+</template>
+
+<script>
+    new Vue({
+        el: "#form",
+
+        mounted() {
+            this.selectAll();
+        },
+        methods: {},
+        data() {
+            return {
+                tableData: [{
+                    id: "2020-2021-1"
+                }, {
+                    id: "2020-2021-2"
+                }, {
+                    id: "2021-2022-1"
+                }, {
+                    id: "2021-2022-1"
+                }, {
+                    id: "2020-2021-1"
+                }, {
+                    id: "2020-2021-1"
+                }, {
+                    id: "2020-2021-1"
+                }, {
+                    id: "2020-2021-1"
+                }]
+            }
+        }
+    })
+
+</script>
 </body>
 </html>

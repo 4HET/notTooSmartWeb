@@ -18,6 +18,7 @@ urlpatterns = [
     path('order/', views.order),
     path('isPunch/', views.isPunch),
     path('deletePunch/', views.deletePunch),
+    path('testdb/', testdb.testdb),
 
     # path('username/', views.username),
     # path('password/', views.password),

@@ -2,7 +2,10 @@ from django.http import HttpResponse
 
 from Punch.models import User
 
-
+def testdb(request):
+    test1 = User(username='2020416051', password='Cuixinyu1107')
+    test1.save()
+    return HttpResponse("<p>数据添加成功！</p>")
 def insert(request):
     test1 = User(username='2020416089', password="LZYsb666")
     test1.save()
