@@ -34,12 +34,12 @@
 <body>
 <template id="form">
     <el-table
-            :data="{{ data }}"
+            :data="{{ semesterOfYear }}"
             style="width: 100%">
         <el-table-column type="expand">
             <template>
                 <el-table
-                        :data="{{ data.0.scoreList }}"
+                        :data="{{ scoreList.0.scoreList }}"
                         stripe
                         style="width: 100%">
                     <el-table-column

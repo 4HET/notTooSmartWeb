@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--适配安卓-->
+    <meta charset="utf-8" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+          name="viewport"/>
+
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../static/js/axios-0.18.0.js"></script>
+    <script src="../static/js/vue.js"></script>
+    <script src="../static/element-ui/lib/index.js"></script>
+    <link rel="stylesheet" href="../static/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+
+    <style>
+        .demo-table-expand {
+            font-size: 0;
+        }
+
+        .demo-table-expand label {
+            width: 90px;
+            color: #99a9bf;
+        }
+
+        .demo-table-expand .el-form-item {
+            margin-right: 0;
+            margin-bottom: 0;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+<template id="form">
+    <div>
+        <el-table
+                :show-header="false"
+                :data="tableData1"
+                style="width: 100%"
+                row-key="id"
+                lazy
+                :load="load"
+                :tree-props="{children: 'children', hasChildren: 'hasChildren'}">
+            <el-table-column
+                    prop="name"
+                    style="width: 33%;">
+            </el-table-column>
+            <el-table-column
+                    prop="score"
+                    style="width: 33%;">
+            </el-table-column>
+            <el-table-column
+                    prop="address"
+                    style="width: 33%;">
+            </el-table-column>
+        </el-table>
+    </div>
+</template>
+
+<script>
+    new Vue({
+        el: "#form",
+
+        mounted() {
+            this.selectAll();
+        },
+        methods: {},
+        data() {
+            return {
+                tableData1: [{
+                    id: 1,
+                    name: '2016-05-02',
+
+                }, {
+                    id: 2,
+                    name: '2016-05-04',
+
+                }, {
+                    id: 3,
+                    name: '2016-05-01',
+
+                    hasChildren: true
+                }, {
+                    id: 4,
+                    name: '2016-05-03',
+                    score: '王小虎',
+                    address: '上海市普陀区金沙江路 1516 弄'
+                }]
+            }
+        },
+        methods: {
+            load(tree, treeNode, resolve) {
+                setTimeout(() => {
+                    resolve([
+                        {
+                            id: 31,
+                            name: '2016-05-01',
+                            score: '王小虎',
+                            address: '上海市普陀区金沙江路 1519 弄'
+                        }, {
+                            id: 32,
+                            name: '2016-05-01',
+                            score: '王小虎',
+                            address: '上海市普陀区金沙江路 1519 弄'
+                        }
+                    ])
+                }, 1000)
+            }
+        },
+    })
+
+</script>
+</body>
+</html>

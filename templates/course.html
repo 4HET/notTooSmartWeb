@@ -6,19 +6,159 @@
     <!--适配安卓-->
     <meta charset="utf-8" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
           name="viewport"/>
+
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../static/js/axios-0.18.0.js"></script>
+    <script src="../static/js/vue.js"></script>
+    <script src="../static/element-ui/lib/index.js"></script>
+    <link rel="stylesheet" href="../static/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+
 </head>
 <body>
 
-{% for item in data %}
-<p>{{ item.semesterOfYear }}</p>
-<p>{{ item.classPlace }}</p>
-<p>{{ item.teacherName|truncatechars:4 }}</p>
-<p>{{ item.classWeek }}</p>
-<p>{{ item.classSections }}</p>
-<br/>
-{% endfor %}
-<!--{{ courseName }}-->
-<!--{{ classPlace }}-->
-<!--{{ teacherName }}-->
+<!--{% for item in data %}-->
+<!--<p>{{ item.semesterOfYear }}</p>-->
+<!--<p>{{ item.classPlace }}</p>-->
+<!--<p>{{ item.teacherName|truncatechars:4 }}</p>-->
+<!--<p>{{ item.classWeek }}</p>-->
+<!--<p>{{ item.classSections }}</p>-->
+<!--<br/>-->
+<!--{% endfor %}-->
+
+<template id="classTable">
+    <el-table
+            :data="tableData"
+            style="width: 100%">
+        <el-table-column
+                fixed
+                prop="date"
+                label="日期"
+                min-width="50%">
+        </el-table-column>
+        <el-table-column
+                prop="name"
+                label="周一"
+                min-width="65%">
+        </el-table-column>
+        <el-table-column
+                prop="province"
+                label="周二"
+                min-width="65%">
+        </el-table-column>
+        <el-table-column
+                prop="city"
+                label="周三"
+                min-width="65%">
+        </el-table-column>
+        <el-table-column
+                prop="address"
+                label="周四"
+                min-width="65%">
+        </el-table-column>
+        <el-table-column
+                prop="zip"
+                label="周五"
+                min-width="65%">
+        </el-table-column>
+        <el-table-column
+                prop="address"
+                label="周六"
+                min-width="65%">
+        </el-table-column>
+        <el-table-column
+                prop="zip"
+                label="周日"
+                min-width="65%">
+        </el-table-column>
+    </el-table>
+</template>
+
+<script>
+    new Vue({
+        el: "#classTable",
+
+        mounted() {
+            this.selectAll();
+        },
+        methods: {},
+        data() {
+            return {
+                tableData: [{
+                    date: '1',
+                    name: '王小虎',
+                    province: '上海',
+                    city: '普陀区',
+                    address: '上海市',
+                    zip: 200333
+                }, {
+                    date: '2',
+                    name: '王小虎',
+                    province: '上海',
+                    city: '普陀区',
+                    address: '上海市',
+                    zip: 200333
+                }, {
+                    date: '3',
+                    name: '王小虎',
+                    province: '上海',
+                    city: '普陀区',
+                    address: '上海市',
+                    zip: 200333
+                }, {
+                    date: '4',
+                    name: '王小虎',
+                    province: '上海',
+                    city: '普陀区',
+                    address: '上海市',
+                    zip: 200333
+                }, {
+                    date: '5',
+                    name: '王小虎',
+                    province: '上海',
+                    city: '普陀区',
+                    address: '上海市',
+                    zip: 200333
+                }, {
+                    date: '6',
+                    name: '王小虎',
+                    province: '上海',
+                    city: '普陀区',
+                    address: '上海市',
+                    zip: 200333
+                }, {
+                    date: '7',
+                    name: '王小虎',
+                    province: '上海',
+                    city: '普陀区',
+                    address: '上海市',
+                    zip: 200333
+                }, {
+                    date: '8',
+                    name: '王小虎',
+                    province: '上海',
+                    city: '普陀区',
+                    address: '上海市',
+                    zip: 200333
+                }, {
+                    date: '9',
+                    name: '王小虎',
+                    province: '上海',
+                    city: '普陀区',
+                    address: '上海市',
+                    zip: 200333
+                }, {
+                    date: '10',
+                    name: '王小虎',
+                    province: '上海',
+                    city: '普陀区',
+                    address: '上海市',
+                    zip: 200333
+                }]
+            }
+        }
+    })
+
+</script>
 </body>
 </html>

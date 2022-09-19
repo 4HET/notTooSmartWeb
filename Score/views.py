@@ -1,3 +1,5 @@
+import pprint
+
 from django.shortcuts import render
 
 from Score.score_info import get_cookie, get_score_info
@@ -21,10 +23,11 @@ def score(request):
     scoreList = []
     semesterOfYear = []
     for i in score_info['data']:
-        scoreList.append(i['scoreList'])
-        semesterOfYear.append(i['semesterOfYear'])
+        scoreList.append({"scoreList": i['scoreList']})
+        semesterOfYear.append({"semesterOfYear": i['semesterOfYear']})
 
+    score_info = {"semesterOfYear": semesterOfYear, "scoreList": scoreList}
 
-    print(score_info)
+    pprint.pprint(score_info['scoreList'][0]['scoreList'])
 
     return render(request, 'score.html', score_info)
