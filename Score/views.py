@@ -28,6 +28,6 @@ def score(request):
 
     score_info = {"semesterOfYear": semesterOfYear, "scoreList": scoreList}
 
-    pprint.pprint(score_info['scoreList'][0]['scoreList'])
+    pprint.pprint(score_info['semesterOfYear'])
 
     return render(request, 'score.html', score_info)

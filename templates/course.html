@@ -28,7 +28,8 @@
 
 <template id="classTable">
     <el-table
-            :data="tableData"
+            :data="{{ end }}"
+
             style="width: 100%">
         <el-table-column
                 fixed
@@ -37,37 +38,37 @@
                 min-width="50%">
         </el-table-column>
         <el-table-column
-                prop="name"
+                prop="1"
                 label="周一"
                 min-width="65%">
         </el-table-column>
         <el-table-column
-                prop="province"
+                prop="2"
                 label="周二"
                 min-width="65%">
         </el-table-column>
         <el-table-column
-                prop="city"
+                prop="3"
                 label="周三"
                 min-width="65%">
         </el-table-column>
         <el-table-column
-                prop="address"
+                prop="4"
                 label="周四"
                 min-width="65%">
         </el-table-column>
         <el-table-column
-                prop="zip"
+                prop="5"
                 label="周五"
                 min-width="65%">
         </el-table-column>
         <el-table-column
-                prop="address"
+                prop="6"
                 label="周六"
                 min-width="65%">
         </el-table-column>
         <el-table-column
-                prop="zip"
+                prop="7"
                 label="周日"
                 min-width="65%">
         </el-table-column>
@@ -81,80 +82,61 @@
         mounted() {
             this.selectAll();
         },
-        methods: {},
+        methods: {
+
+            objectSpanMethod({row, column, rowIndex, columnIndex}) {
+                if (columnIndex === 0) {
+                    if (rowIndex % 2 === 0) {
+                        return {
+                            rowspan: 2,
+                            colspan: 1
+                        };
+                    } else {
+                        return {
+                            rowspan: 0,
+                            colspan: 0
+                        };
+                    }
+                }
+            }
+        },
         data() {
             return {
-                tableData: [{
-                    date: '1',
-                    name: '王小虎',
-                    province: '上海',
-                    city: '普陀区',
-                    address: '上海市',
-                    zip: 200333
-                }, {
-                    date: '2',
-                    name: '王小虎',
-                    province: '上海',
-                    city: '普陀区',
-                    address: '上海市',
-                    zip: 200333
-                }, {
-                    date: '3',
-                    name: '王小虎',
-                    province: '上海',
-                    city: '普陀区',
-                    address: '上海市',
-                    zip: 200333
-                }, {
-                    date: '4',
-                    name: '王小虎',
-                    province: '上海',
-                    city: '普陀区',
-                    address: '上海市',
-                    zip: 200333
-                }, {
-                    date: '5',
-                    name: '王小虎',
-                    province: '上海',
-                    city: '普陀区',
-                    address: '上海市',
-                    zip: 200333
-                }, {
-                    date: '6',
-                    name: '王小虎',
-                    province: '上海',
-                    city: '普陀区',
-                    address: '上海市',
-                    zip: 200333
-                }, {
-                    date: '7',
-                    name: '王小虎',
-                    province: '上海',
-                    city: '普陀区',
-                    address: '上海市',
-                    zip: 200333
-                }, {
-                    date: '8',
-                    name: '王小虎',
-                    province: '上海',
-                    city: '普陀区',
-                    address: '上海市',
-                    zip: 200333
-                }, {
-                    date: '9',
-                    name: '王小虎',
-                    province: '上海',
-                    city: '普陀区',
-                    address: '上海市',
-                    zip: 200333
-                }, {
-                    date: '10',
-                    name: '王小虎',
-                    province: '上海',
-                    city: '普陀区',
-                    address: '上海市',
-                    zip: 200333
-                }]
+                tableData: [{'2': '大数据可视化分析@JS317', 'date': '1'},
+                    {'2': '大数据可视化分析@JS317', 'date': '2'},
+                    {
+                        '1': '大数据可视化分析@JE201',
+                        '2': '数据结构@JS317',
+                        '3': '机器学习@JS104',
+                        '4': '机器学习@JS317',
+                        'date': '3'
+                    },
+                    {
+                        '1': '大数据可视化分析@JE201',
+                        '2': '数据结构@JS317',
+                        '3': '机器学习@JS104',
+                        '4': '机器学习@JS317',
+                        'date': '4'
+                    },
+                    {
+                        '1': '数据结构@JC401',
+                        '2': '大学生创新创业指@JE305',
+                        '5': 'Spark大数据@JS324',
+                        '6': '习近平新时代中国@JE105',
+                        'date': '5'
+                    },
+                    {
+                        '1': '数据结构@JC401',
+                        '2': '大学生创新创业指@JE305',
+                        '5': 'Spark大数据@JS324',
+                        '6': '习近平新时代中国@JE105',
+                        'date': '6'
+                    },
+                    {'1': '数据结构@JC401', '5': 'Spark大数据@JS324', '6': '习近平新时 代中国@JE105', 'date': '7'},
+                    {'5': 'Spark大数据@JS324', 'date': '8'},
+                    {'date': '9'},
+                    {'date': '10'},
+                    {'date': '11'}]
             }
         }
     })
