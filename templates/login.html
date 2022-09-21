@@ -17,7 +17,7 @@
 
 
     <script>
-
+        window.onload = to_punch;
         function to_punch() {
             // document.getElementById("ifr").setAttribute("src", "../punch")
             try {
@@ -25,8 +25,8 @@
                 document.getElementById("password").value = window.getPassword.getPassword();
                 document.getElementById("myForm").submit();
             } catch (err) {
-                document.getElementById("username").value = "2020416089";
-                document.getElementById("password").value = "LZYsb666";
+                document.getElementById("username").value = "";
+                document.getElementById("password").value = "";
                 // document.getElementById("myForm").submit();
             }
         }
@@ -34,12 +34,12 @@
     </script>
 </head>
 
-<form id="myForm" action="" method="post" disabled="none">
+<form id="myForm" action="" method="post">
     {% csrf_token %}
     <input id="username" type="text" name="username">
     </br>
     <input id="password" type="password" name="password">
-    <button TYPE="submit">hhh</button>
+    <button type="submit">登录</button>
 </form>
 
 <!--<div style="position: fixed; height: 100%;width: 100%">-->
