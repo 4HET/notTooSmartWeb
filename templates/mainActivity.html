@@ -73,9 +73,23 @@
 </div>
 
 <div id="elButton" style="position:absolute;right:0px;bottom:0px;">
-    <el-row>
-        <el-button><a href="/logout/" >注销</a></el-button>
-    </el-row>
+
+
+    <el-button @click="drawer = true" round style="margin-left: 16px;">
+        关于
+    </el-button>
+
+    <el-drawer
+            title="关于我"
+            :visible.sync="drawer"
+
+            :direction="direction"
+    :size="size">
+        <iframe src="http://www.4het.cn/" height="100%" width="100%"></iframe>
+        <el-row>
+            <el-button><a href="/logout/">注销</a></el-button>
+        </el-row>
+    </el-drawer>
 </div>
 
 <script>
@@ -85,9 +99,7 @@
         mounted() {
             this.selectAll();
         },
-        methods: {
-
-        },
+        methods: {},
         data() {
             const item = {
                 name: '王小虎',
@@ -114,23 +126,21 @@
         mounted() {
             this.selectAll();
         },
-        methods: {
-
-        },
         data() {
-            const item = {
-                name: '王小虎',
-                password: '123456',
-                permission: '学生'
-            };
             return {
-                // 每页显示的条数
-                pageSize: 10,
-                // 总记录数
-                totalCount: 100,
-                // 当前页码
-                currentPage: 1,
-                tableData: Array(20).fill(item)
+                drawer: false,
+                direction: 'rtl',
+                size: '400px'
+            };
+        },
+        methods: {
+            handleClose(done) {
+                this.$confirm('确认关闭？')
+                    .then(_ => {
+                        done();
+                    })
+                    .catch(_ => {
+                    });
             }
         }
     })
