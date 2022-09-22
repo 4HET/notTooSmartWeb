@@ -6,6 +6,13 @@
     <!--适配安卓-->
     <meta charset="utf-8" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
           name="viewport"/>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../static/js/axios-0.18.0.js"></script>
+    <script src="../static/js/vue.js"></script>
+    <script src="../static/element-ui/lib/index.js"></script>
+    <link rel="stylesheet" href="../static/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+
     <script>
         //接收android传递的数据，并显示在html上
         function AndroidToWeb(str) {
@@ -15,18 +22,35 @@
 
 </head>
 <body>
-<form action="" method="post" id="myForm">
-    {% csrf_token %}
-    <p>提交你的邮箱,那么当你打卡成功过会有邮件提示</p>
-    邮箱:<input type="text" name="email">
-    </br>
-<!--    <input id="username" type="text" name="username">-->
-    </br>
-<!--    <input id="password" type="text" name="password">-->
-<!--    <button onclick="setData()">getDataFromAndroid</button>-->
-    <input type="submit" value="提交" onclick="AndroidToWeb()">
-    <label id="label" id="submit"/>
-</form>
+
+<template id="form">
+    <el-form action="" method="post" id="myForm" :label-position="labelPosition" label-width="60px"
+             :model="formLabelAlign">
+        {% csrf_token %}
+        <div>
+    <span>输入你的邮箱并且设置自动打卡</span>
+    <el-divider></el-divider>
+  </div>
+        <el-form-item label="邮箱：" style="width: 80%">
+            <el-input name="email" v-model="formLabelAlign.name"></el-input>
+        </el-form-item>
+        <el-form-item label-width="0" style="text-align: center">
+            <el-button type="primary" round><input type="submit" value="提交" onclick="AndroidToWeb()"
+                                                   style="background-color:transparent;border:0;"></el-button>
+            <!--            <input type="submit" value="提交" onclick="AndroidToWeb()">-->
+
+    </el-form>
+</template>
+<!--<form action="" method="post" id="myForm">-->
+<!--    <p>提交你的邮箱,那么当你打卡成功过会有邮件提示</p>-->
+<!--    邮箱:<input type="text" name="email">-->
+<!--    </br>-->
+<!--    &lt;!&ndash;    <input id="username" type="text" name="username">&ndash;&gt;-->
+<!--    </br>-->
+<!--    &lt;!&ndash;    <input id="password" type="text" name="password">&ndash;&gt;-->
+<!--    &lt;!&ndash;    <button onclick="setData()">getDataFromAndroid</button>&ndash;&gt;-->
+<!--    <input type="submit" value="提交" onclick="AndroidToWeb()">-->
+<!--</form>-->
 
 <!--<div id="usrname" onclick="getAndroidValueUsername()"-->
 <!--     style="width:100px; height:100px; background-color:#009903;"></div>-->
@@ -49,4 +73,25 @@
 <!--</br>-->
 <!--<p>{{ password }}</p>-->
 </body>
+
+<script>
+    new Vue({
+        el: "#form",
+
+        mounted() {
+            this.selectAll();
+        },
+        data() {
+            return {
+                labelPosition: 'left',
+                formLabelAlign: {
+                    name: '',
+                    region: '',
+                    type: ''
+                }
+            };
+        },
+        methods: {}
+    })
+</script>
 </html>

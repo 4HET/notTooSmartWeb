@@ -37,8 +37,14 @@ def punch(request):
     return render(request, "punch.html", ctx)
 
 def isPunch(request):
+    username = request.COOKIES.get('username')
+    password = request.COOKIES.get('password')
+    user1 = User.objects.get(username=username)
+    email = user1.email
     context = {}
-    context['hello'] = 'Hello World!'
+    context['email'] = email
+    context['username'] = username
+    context['password'] = password
     return render(request, "isPunch.html", context)
 
 def postRequest(request):

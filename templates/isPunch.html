@@ -24,14 +24,36 @@
     </style>
 </head>
 <body>
-hhh,你已经设置了自动打卡
-<!--<button></button>-->
-<br/>
-<div id="elButton">
-    <el-row>
-        <el-button><a href="/deletePunch/">注销</a></el-button>
-    </el-row>
-</div>
+<template id="divider">
+    <el-collapse v-model="activeName" accordion>
+        <el-collapse-item title="打卡状态 Status" name="1">
+            <br/>
+            <div><b>你已成功设置自动打卡</b>，程序将在每天<b>7:00-8:00</b>为你打卡</div>
+            <div>设置自动打卡后，您的智慧曲园仍可继续使用，不会受本程序的影响</div>
+        </el-collapse-item>
+        <el-collapse-item title="你的个人信息 Your data" name="2">
+            <div>你的账号：{{ username }}</div>
+            <div>你的密码：{{ password }}</div>
+            <div>若你的信息有误，请重新登陆或者联系管理员</div>
+        </el-collapse-item>
+        <el-collapse-item title="你的邮箱 Your email" name="3">
+            <div>你的邮箱：{{ email }}</div>
+            <div>此email在打卡成功或失败后，自动为你发送邮件提醒，建议输入您的常用邮箱</div>
+            <div>若您不希望被打扰，则可以将此关键字置为空或者其他字符串</div>
+        </el-collapse-item>
+        <el-collapse-item title="关于本项目" name="4">
+            <div>若您想学习本项目，可以访问以下网址：</div>
+            <div><a>https://github.com/4HET/notTooSmartWeb</a></div>
+        </el-collapse-item>
+        <el-collapse-item title="联系作者" name="5">
+            <div>发现bug或者对本app的用户体验有什么不满可以联系作者</div>
+            <div>作者邮箱：2659335014@qq.com</div>
+        </el-collapse-item>
+    </el-collapse>
+</template>
+<template id="elButton" style="text-align: center">
+    <el-button><a href="/deletePunch/">注销自动打卡</a></el-button>
+</template>
 <script>
     new Vue({
         el: "#elButton",
@@ -57,7 +79,19 @@ hhh,你已经设置了自动打卡
             }
         }
     })
+    new Vue({
+        el: "#divider",
 
+        mounted() {
+            this.selectAll();
+        },
+        methods: {},
+        data() {
+            return {
+                activeName: '1'
+            };
+        }
+    })
 </script>
 </body>
 </html>
