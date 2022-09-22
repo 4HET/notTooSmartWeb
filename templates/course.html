@@ -16,20 +16,10 @@
 
 </head>
 <body>
-
-<!--{% for item in data %}-->
-<!--<p>{{ item.semesterOfYear }}</p>-->
-<!--<p>{{ item.classPlace }}</p>-->
-<!--<p>{{ item.teacherName|truncatechars:4 }}</p>-->
-<!--<p>{{ item.classWeek }}</p>-->
-<!--<p>{{ item.classSections }}</p>-->
-<!--<br/>-->
-<!--{% endfor %}-->
-
-<template id="classTable">
+<template class="table-container" id="classTable" style="height: 100%">
     <el-table
             :data="{{ end }}"
-
+            height="calc(100vh - 80px)"
             style="width: 100%">
         <el-table-column
                 fixed
@@ -79,8 +69,9 @@
     new Vue({
         el: "#classTable",
 
-        mounted() {
-            this.selectAll();
+        mounted: function () {
+            // 高度调整
+            this.elTableHeight = $('.table-container').height();
         },
         methods: {
 
