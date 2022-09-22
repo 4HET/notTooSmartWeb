@@ -1,3 +1,7 @@
+## 写在开始
+
+本项目为作者的安卓实训webview的后端部分，本项目仅供学习使用，若有侵权联系作者删除
+
 ## 开发目的
 
 在上课我们需要查看课表，以便知道去哪个教室时，我们需要打开智慧曲园或者掌上曲园公众号进行查询，步骤繁琐且等待时间长（一套操作下来至少十几秒），严重影响用户体验，因此我想能不能自己开发一个app来简化这些操作，因此第一个功能——课表功能便产生了。该功能是为了用户能够在上课途中快速查询课表使用
@@ -25,6 +29,8 @@
 
 ## 技术实现
 
+本项目（webview的后端）使用前端Vue+Element UI+h5，后端Django+python爬虫，数据库MySQL进行技术实现，用户既可以通过按住访问，也可直接通过web访问
+
 ### 登录检测
 
 通过java网络编程技术，每次用户登录，向智慧曲园发送网络请求，根据智慧曲园的响应体信息判断用户名是否存在，密码是否正确。若密码正确，则使用```SharedPreferences```
@@ -37,20 +43,20 @@
 在安卓中，通过以下代码向JavaScript注入Java类
 
 ```java
-    webView.addJavascriptInterface(PunchActivity.this, "getUsername");
-    webView.addJavascriptInterface(PunchActivity.this, "getPassword");
+webView.addJavascriptInterface(PunchActivity.this, "getUsername");
+webView.addJavascriptInterface(PunchActivity.this, "getPassword");
 
-    @JavascriptInterface
-    public String getPassword() {
-        Log.i("inputPassword", "js接受了来自安卓的密码");
-        return inputPassword;
-    }
+@JavascriptInterface
+public String getPassword() {
+    Log.i("inputPassword", "js接受了来自安卓的密码");
+    return inputPassword;
+}
 
-    @JavascriptInterface
-    public String getUsername() {
-        Log.i("inputUsername", "js接受了来自安卓的用户名");
-        return inputUsername;
-    }
+@JavascriptInterface
+public String getUsername() {
+    Log.i("inputUsername", "js接受了来自安卓的用户名");
+    return inputUsername;
+}
 ```
 
 在html中，使用一下代码接收数据：
