@@ -75,8 +75,36 @@
 
 ### Vue前端开发
 
-前端使用Vue进行开发，引入element ui模块使开发更加迅速，使界面更加简洁美观，避免“造轮子”而浪费时间，把时间放在Android开发与Django开发，使后端的开发更加的简洁；使用浮动框架，标题导航栏作为主界面，各个应用嵌入主界面，在点击相应的栏目，内容部分会跳转到相应的界面
+前端使用Vue进行开发，引入element ui模块使开发更加迅速，使界面更加简洁美观，避免“造轮子”而浪费时间，把时间放在Android开发与Django开发，使后端的开发更加的简洁；使用浮动框架，标题导航栏作为主界面，各个应用嵌入主界面，在点击相应的栏目，内容部分会跳转到相应的界面。
+
+当前端检测到登陆数据来自Android时，调用js方法自动填充密码并且点击登录；当检测到数据是来自web时，会让用户自己选择输入密码进行登录
+
+```javascript
+<script>
+    window.onload = to_punch;
+    function to_punch() {
+        // document.getElementById("ifr").setAttribute("src", "../punch")
+        try {
+            document.getElementById("username").value = window.getUsername.getUsername();
+            document.getElementById("password").value = window.getPassword.getPassword();
+            document.getElementById("myForm").submit();
+        } catch (err) {
+            document.getElementById("username").value = "";
+            document.getElementById("password").value = "";
+            // document.getElementById("myForm").submit();
+        }
+    }
+
+</script>
+```
 
 ### Django后端开发
 
-在web开发中，后端使用Django的MTV三层架构，应用之间相互独立，易于维护；使用mysql数据库技术，将用户信息存下，方便后端进行打卡自动化以及服务的提供
+在web开发中，后端使用Django的MTV三层架构，应用之间相互独立，易于维护；使用mysql数据库技术，将用户信息存下，方便后端进行打卡自动化以及服务的提供。用户必须登录后才可访问具体界面，若用户直接访问成绩、打卡界面，系统会重定向到登陆界面。
+### python爬虫
+
+用户登录后，对应的app调用相应的爬虫程序，对智慧曲园课表、成绩进行爬取，再将数据交由后端格式化数据，最终将格式化的数据返回到前端通过Vue进行显示
+
+### mysql数据库
+
+数据库负责授权用户：当用户想使用时需要联系作者在数据库进行授权，授权后可进行登陆查看自己的课表、成绩以及自动打卡信息。打卡界面用户可以选择输入自己的邮箱，打卡成功或失败后系统会发邮件到用户的邮箱。
