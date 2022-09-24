@@ -44,8 +44,6 @@ def get_cookie(usr_info):
 
 if __name__ == '__main__':
     usr_info = {
-        "usr": "2020416089",
-        "pwd": "LZYsb666"
     }
     cookie = get_cookie(usr_info)
     print(cookie)

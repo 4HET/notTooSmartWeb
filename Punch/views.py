@@ -45,6 +45,9 @@ def isPunch(request):
     context['email'] = email
     context['username'] = username
     context['password'] = password
+    print(email)
+    print(username)
+    print(password)
     return render(request, "isPunch.html", context)
 
 def postRequest(request):
