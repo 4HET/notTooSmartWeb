@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'MainActivity',
     'Score',
     'Course',
-    'User'
+    'User',
+    'Img',
 ]
 
 MIDDLEWARE = [
@@ -81,7 +82,7 @@ WSGI_APPLICATION = 'AndroidServer.wsgi.application'
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
+#         'NAME': 'mydatabase',
 #     }
 # }
 
@@ -142,3 +143,7 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media').replace('\\', '/') #设置静态文件路径为主目录下的media文件夹
+MEDIA_URL = '/media/' #url映射

@@ -2,7 +2,6 @@
 AndroidServer Punch URL Configuration
 views
 '''
-import pymysql
 from django.shortcuts import render, redirect
 
 from Punch import models
